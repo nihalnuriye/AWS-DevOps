@@ -1,6 +1,8 @@
 AWSTemplateFormatVersion: 2010-09-09
+
 Description: |
   This template launches an ec2 instance which enables SSH
+
 Resources:
   InstanceSecGrp:
     Type: AWS::EC2::SecurityGroup
@@ -11,6 +13,7 @@ Resources:
         FromPort: 22
         ToPort: 22
         CidrIp: 0.0.0.0/0
+
   MyFirstInstance:
     Type: AWS::EC2::Instance
     Properties:
@@ -21,6 +24,6 @@ Resources:
         - !Ref InstanceSecGrp
       Tags:
         - Key: Name
-          Value: myfirstinstancecfn
+          Value: myfirstinstance
 
 
