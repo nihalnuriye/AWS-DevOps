@@ -281,6 +281,14 @@ This is part 1 of line 3 : This is part 2 of line 3
 
 ## Part 3 - crontab
 
+- In Amazon Linux 2023, crontab is not installed. So we need to install it manually by using commands below.
+```bash
+sudo yum install cronie -y
+
+sudo systemctl enable crond.service
+
+sudo systemctl start crond.service
+```
 - Crontab, stands for `cron table`, which is a list of commands scheduled to run at regular time intervals on the system. 
 
 - If we need to schedule any task on Linux, we should basically edit the crontab file. We can do that using the below command.
