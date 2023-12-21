@@ -175,7 +175,7 @@ Deletion protection: ****Disabled
 - Connect the RDS MySQL DB instance with admin user, and paste the password when prompted.
 
 ```bash
-mysql -h Your RDS Endpoint -u admin -p
+mysql -h root-rds.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p
 ```
 
 - Show default databases in the MySQL server.
@@ -323,7 +323,7 @@ EXIT;
 - Login back to the same RDS MySQL DB instance (`root-RDS`) as `admin` using the password defined with SSL pass: `Pl123456789`.
 
 ```bash
-mysql -h RDS_ENDPOINT -u admin -p
+mysql -h root-rds.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p
 ```
 - Choose a database again 
 
@@ -405,7 +405,7 @@ USE clarusway;
 - This time we are going to connect as `admin` using the password defined `Pl123456789` to the newly RDS Instance named `restored-from-man-snapshot` that is created from snapshot.
 
 ```bash
-mysql -h [***restored-from-man-snapshot RDS endpoint] -u admin -p
+mysql -h restored-from-man-snapshot.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p
 ```
 
 - Choose a database (`clarusway` db) to work with.
@@ -435,7 +435,7 @@ EXIT;
 - Connect to the 'root-RDS` database again.
 
 ```bash
-mysql -h [root-RDSENDPOINT] -u admin -p
+mysql -h root-rds.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p
 ```
 - Choose a database 
 
@@ -501,7 +501,7 @@ there are only 4 records
 - Log into the RDS instance (`restored-from-point-in-time-RDS`) as `admin` using the password defined `Pl123456789`
 
 ```bash
-mysql -h [DNS Name of point in time recovery RDS Instance] -u admin -p clarusway
+mysql -h rds-restored-from-point-in-time.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p clarusway
 ```
 
 - Show that deleted records of employees are back in `restored-from-point-in-time-RDS`.
@@ -519,7 +519,7 @@ SELECT * FROM employees ORDER BY salary ASC;
 - Back up the `clarusway` db from RDS DB instance (`restored-from-point-in-time-RDS`) to the file named `backup.sql` on EC2 instance.
 
 ```bash
-mysqldump -h [restored-from-point-in-time-RDS endpoint] -u admin -p clarusway > backup.sql --set-gtid-purged=OFF
+mysqldump -h rds-restored-from-point-in-time.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p clarusway > backup.sql --set-gtid-purged=OFF
 ```
 
 - Show `backup.sql` file with `ls` command.
@@ -527,13 +527,13 @@ mysqldump -h [restored-from-point-in-time-RDS endpoint] -u admin -p clarusway > 
 - Restore the backup of `clarusway` db on to the MySQL DB Server (`root-RDS` instance) using  `backup.sql` file
 
 ```bash
-mysql -h [root-RDS endpoint] -u admin -p clarusway < backup.sql
+mysql -h root-rds.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p clarusway < backup.sql
 ```
 
 - Connect to the `root-RDS` DB
 
 ```bash
-mysql -h [root-RDS endpoint] -u admin -p;
+mysql -h root-rds.c7882wc0w1xt.us-east-1.rds.amazonaws.com -u admin -p;
 ```
 
 - Show that all records are replicated in the `clarusway` database.
