@@ -12,7 +12,7 @@
 
 # Get the password.
 
-echo
+
 # Create the account.
 
 # Check to see if the useradd command succeeded.
