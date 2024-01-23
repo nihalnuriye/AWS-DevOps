@@ -1,0 +1,7 @@
+grep PrivateIpAddress info.json
+grep PrivateIpAddress info.json | tail -1
+grep PrivateIpAddress info.json | tail -1 | cut -d'"' -f4
+PriIP=$(grep PrivateIpAddress info.json | tail -1 | cut -d'"' -f4)
+echo $PriIP
+sed "s/ec2-private_ip/$PriIP/" terraform.tf 
+sed -i "s/ec2-private_ip/$PriIP/" terraform.tf 
