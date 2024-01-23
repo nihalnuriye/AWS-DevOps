@@ -7,10 +7,11 @@ then
     exit 1
 fi
 # Define the backup directory
-BACKUP_FOLDER=("/home/ec2-user/data")
+BACKUP_FOLDER=("/home/ec2-user/data") #zamandan kazanmak icin "/etc" "/usr" "/boot" sildik.
 # Where do we backup to
 DEST="/mnt/backup"
 # Check if this folder is created before, if not create it.
+# EGER BACKUP DIYE DOSYA YOKSA YARAT
 if [[ ! -d $DEST ]]
 then
     mkdir $DEST
@@ -22,7 +23,7 @@ DATE=$(date +%F-%H-%M)
 # Print start status message.
 echo "Your back up will start soon."
 # Iterate through the directories to be backed up
-for DIR in ${BACKUP_FOLDER[@]}
+for DIR in ${BACKUP_FOLDER[@]} # @ her bir üye icin
 do
     # Create the filename for the backup
     FILENAME="$DEST/$HOSTNAME-$DATE-$(basename $DIR).tgz"
