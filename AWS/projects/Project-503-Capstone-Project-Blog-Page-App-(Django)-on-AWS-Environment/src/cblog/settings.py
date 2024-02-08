@@ -84,7 +84,7 @@ def get_ssm_parameters():
 
     # AWS SSM Parametr define
     username_param = ssm.get_parameter(Name='/nihal/capstone/username')
-    password_param = ssm.get_parameter(Name="/oktaytest/capstone/password", WithDecryption=True)
+    password_param = ssm.get_parameter(Name="/nihal/capstone/password", WithDecryption=True)
 
 
     # Parametre retrieve
