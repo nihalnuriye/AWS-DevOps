@@ -16,7 +16,7 @@ At the end of the this hands-on training, students will be able to;
 
 ## Part 1 - Install Ansible
 
-- Create 3 Amazon Linux 2 and 1 Ubuntu EC2 instances. Then name the instances as below. For Security Group, allow ssh and http when creating EC2.
+- Create 3 Amazon Linux 2023 and 1 Ubuntu EC2 instances. Then name the instances as below. For Security Group, allow ssh and http when creating EC2.
 1-control-node
 2-node1
 3-node2
