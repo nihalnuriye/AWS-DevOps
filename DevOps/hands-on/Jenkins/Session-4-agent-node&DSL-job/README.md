@@ -106,7 +106,7 @@ exit
 ```bash
 mkdir bin
 cd bin
-wget http://<jenkins_controller_ip>:8080/jnlpJars/agent.jar
+wget http://172.31.16.234:8080/jnlpJars/agent.jar
 ```
 
 Command Agent Launcher
