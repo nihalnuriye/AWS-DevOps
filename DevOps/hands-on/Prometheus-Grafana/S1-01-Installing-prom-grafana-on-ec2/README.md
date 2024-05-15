@@ -33,7 +33,7 @@ Securtiy Group: "Port 22, 3000, 9090, 9100"
 - [Download the latest release](https://prometheus.io/download/) of Prometheus for linux. Select *.linux-*.tar.gz
 
 ```bash
-wget https://github.com/prometheus/prometheus/releases/download/v2.49.1/prometheus-2.49.1.linux-amd64.tar.gz
+wget https://github.com/prometheus/prometheus/releases/download/v2.52.0/prometheus-2.52.0.linux-amd64.tar.gz
 ```
 
 Extract and run it.
@@ -131,7 +131,7 @@ For more about the expression language, see the [expression language documentati
 - Install and run the Prometheus Node Exporter that is a single static binary. Once you've downloaded it from the Prometheus downloads page extract it, and run it:
 
 ```bash
-wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.8.0/node_exporter-1.8.0.linux-amd64.tar.gz
 tar xvfz node_exporter-*.*-amd64.tar.gz
 cd node_exporter-*.*-amd64
 ./node_exporter
@@ -209,7 +209,7 @@ scrape_configs:
 - Select `Red Hat, CentOS, RHEL, and Fedora(64 Bit)` part.
 
 ```bash
-sudo yum install -y https://dl.grafana.com/enterprise/release/grafana-enterprise-10.3.3-1.x86_64.rpm
+sudo yum install -y https://dl.grafana.com/enterprise/release/grafana-enterprise-10.4.2-1.x86_64.rpm
 sudo systemctl start grafana-server.service
 ```
 
@@ -218,6 +218,8 @@ sudo systemctl start grafana-server.service
 - Open http://< public ip>:3000 and login as "admin" / "admin".
 
 ### Creating a Prometheus data source
+
+- Clik on ``Connections``.
 
 - Click on ``Data Sources``.
 
@@ -231,7 +233,7 @@ sudo systemctl start grafana-server.service
 
 ### Creating a Prometheus graph
 
-- Click the graph title, then click ``Edit``.
+- Click the ``Dashboards``, then click ``New dashboard``, then click ``+ Add visualization``, then select ``prometheus``.
 
 - Under the ``Data source`` tab, select Prometheus data source.
 
