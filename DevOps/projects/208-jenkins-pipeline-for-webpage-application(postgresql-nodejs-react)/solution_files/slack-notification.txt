@@ -1,0 +1,19 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# `slack notification`
+# slack notification plugini indir
+# slackte ilgili channela git
+# class-chat (yanda aşağı yönlü oku tıkla) -> integrations -> add apps -> jenkins ci (install tıkla) -> add to slack -> class-chat (post to channel) -> add jenkins ci integration
+# bu sayfada credential ve bilgiler geliyor
+# manage jenkins -> credential
+```yml
+kind: secret.txt
+secret: xxxxxxxx (yukarıda aldığın paswordu gir)
+id: jenkins-slack
+description: jenkins-slack-notification
+```
+# manage jenkins -> system config -> slack
+```yml
+workspace: devops14tr
+credential: jenkins-slack (az önce oluşan)
+Default channel / member id: #class-chat
+```
