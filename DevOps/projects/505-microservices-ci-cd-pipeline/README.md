@@ -1059,6 +1059,9 @@ aws ecr create-repository \
 --region ${AWS_REGION}
 ```
 
+-  Build Now "create-ecr-docker-registry-for-dev" Freestyle project
+
+
 * Prepare a script to create Docker Registry for `dev` on AWS ECR and save it as `create-ecr-docker-registry-for-dev.sh` under `infrastructure` folder.
 
 ``` bash
