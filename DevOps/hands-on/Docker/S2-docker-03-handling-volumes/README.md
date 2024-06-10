@@ -442,7 +442,7 @@ full.txt
 
 ```bash
 docker container prune
-docker volume prune
+docker volume prune -a
 docker volume ls
 docker container ls
 ```
